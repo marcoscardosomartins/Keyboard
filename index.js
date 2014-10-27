@@ -962,12 +962,66 @@ p.nominalBounds = new cjs.Rectangle(0,0,960,550);
 	this.initialize(mode,startPosition,loop,{});
 
 	// timeline functions:
+	this.frame_0 = function() {
+		// AJUSTES NAS DIMENSÕES
+		var keepAspectRatio = false;
+		
+		window.onresize = function()
+		{
+			onResize();
+		}
+		
+		function onResize()
+		{
+			// browser viewport size
+			var w = window.innerWidth;
+			var h = window.innerHeight;
+			
+			// stage dimensions
+			var ow = 960; // your stage width
+			var oh = 550; // your stage height
+			
+			if ((fullscreenSwitch.currentFrame == 1) && (window.innerWidth < window.innerHeight))
+				keepAspectRatio = false;
+			else 
+				keepAspectRatio = true;
+			
+			if (keepAspectRatio)
+			{
+				// keep aspect ratio
+				var scale = Math.min(w / ow, h / oh);
+				stage.scaleX = scale;
+				stage.scaleY = scale;
+				
+				// adjust canvas size
+				stage.canvas.width = ow * scale;
+				stage.canvas.height = oh * scale;
+			}
+			else
+			{
+				// scale to exact fit
+				stage.scaleX = w / ow;
+				stage.scaleY = h / oh;
+				
+				// adjust canvas size
+				stage.canvas.width = ow * stage.scaleX;
+				stage.canvas.height = oh * stage.scaleY;
+			}
+			
+			//bg.cache(0, 0, stage.canvas.width / stage.scaleX, stage.canvas.height / stage.scaleY);
+			
+			// update the stage
+			stage.update();
+		}
+		
+		//onResize();
+	}
 	this.frame_29 = function() {
 		this.stop();
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).wait(29).call(this.frame_29).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(29).call(this.frame_29).wait(1));
 
 	// Camada 2
 	this.keyboard = new lib.KeyboardCartoonistBreaked();
