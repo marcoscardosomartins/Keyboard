@@ -1,6 +1,6 @@
 <html>
     <h1>Playing Audio</h1>
-    <button onclick="playPGAudio()">Play Some Audio</button>
+    <button onclick="playPGAudio(getPhoneGapPath() + 'assets/click.ogg')">Play Some Audio</button>
     <script src="phonegap.js"></script>
     <script>
         function playPGAudio(src) {
@@ -32,6 +32,6 @@
             return path;
         };
         
-        playPGAudio(getPhoneGapPath() + 'assets/click.mp3');
+       // playPGAudio(getPhoneGapPath() + 'assets/click.ogg');
     </script>
 </html>
