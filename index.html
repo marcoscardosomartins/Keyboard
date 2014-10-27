@@ -1,6 +1,6 @@
 <html>
     <h1>Playing Audio</h1>
-    <button onclick="playSound()">Play Some Audio</button>
+    <button onclick="playAudio()">Play Some Audio</button>
     <script src="phonegap.js"></script>
     <script>
         function playPGAudio(src) {
@@ -37,6 +37,7 @@
             alert('antes de chamar o audio');
             playPGAudio(getPhoneGapPath() + 'assets/click.mp3');
         }
+        //playAudio();
         
        // playPGAudio(getPhoneGapPath() + 'assets/click.ogg');
     </script>
