@@ -777,7 +777,7 @@ p.nominalBounds = new cjs.Rectangle(-27.5,-27.5,55,55);
 			e.currentTarget.bg.gotoAndPlay("s1");
 			
 			//playSound("click");
-			playAudio("file:///android_asset/www/click.ogg");
+			playAudio();
 			
 			if (str == "end")
 				return;

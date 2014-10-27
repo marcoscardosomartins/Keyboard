@@ -1,0 +1,43 @@
+<html>
+    <h1>Playing Audio</h1>
+    <button onclick="playAudio()">Play Some Audio</button>
+    <script src="phonegap.js"></script>
+    <script>
+        function playPGAudio(src) {
+            /*if (device.platform == 'Android') {
+                src = '/android_asset/www/' + src;
+            }*/
+            //alert('inside playPGAudio');
+            var media = new Media(src, success, error_error);
+ 
+            media.play();
+        }
+ 
+        function success() {
+            // ignore
+        }
+ 
+        function error_error(e) {
+            alert('great error');
+            alert(e.message);
+        }
+        
+        function getPhoneGapPath() {
+            /*var devicePlatform = device.platform;
+            if (devicePlatform === "iOS") {
+                path = "";
+            } else if (devicePlatform === "Android" || devicePlatform === 'android') {
+                path = "/android_asset/www/";
+            }*/
+            path = "/android_asset/www/";
+            //alert(path);
+            return path;
+        };
+        
+        function playAudio()
+        {
+            //alert('antes de chamar o audio');
+            playPGAudio(getPhoneGapPath() + 'sword.ogg');
+        }
+    </script>
+</html>
