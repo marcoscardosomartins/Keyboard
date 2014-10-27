@@ -74,6 +74,7 @@ function playSound(id)
 function playPGAudio(src) {
     var media = new Media(src, success, error_error);
     media.play();
+    media.release();
 }
 
 function success() {
