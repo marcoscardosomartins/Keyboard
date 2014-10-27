@@ -748,11 +748,11 @@ p.nominalBounds = new cjs.Rectangle(-27.5,-27.5,55,55);
 		
 		var c = this;
 		
-		var buttons = [c._0, this._1, this._2, this._3, this._4, this._5, this._6, this._7, this._8, this._9,  
+		/*var buttons = [c._0, this._1, this._2, this._3, this._4, this._5, this._6, this._7, this._8, this._9,  
 		this._a, this._b, this._c, this._d, this._e, this._f, this._g, this._h, this._i, this._j, 
 		this._k, this._l, this._m, this._n, this._o, this._p, this._q, this._r, this._s, this._t, 
 		this._u, this._v, this._w, this._x, this._y, this._z, this._ponto, this._exclamacao, 
-		this._spc, this._del, this._end];
+		this._spc, this._del, this._end];*/
 		
 		var btns = ["_0", "_1", "_2", "_3", "_4", "_5", "_6", "_7", "_8", "_9", 
 		"_a", "_b", "_c", "_d", "_e", "_f", "_g", "_h", "_i", "_j", 
@@ -779,7 +779,10 @@ p.nominalBounds = new cjs.Rectangle(-27.5,-27.5,55,55);
 			playAudio("click");
 			
 			if (str == "end")
+			{
+				// dispatch event of field concluded
 				return;
+			}
 			
 			if (str == "del")
 			{
@@ -965,6 +968,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,960,550);
 	this.frame_0 = function() {
 		// AJUSTES NAS DIMENSÕES
 		var keepAspectRatio = false;
+		//var fullscreenSwitch = this.fullscreenSwitch;
 		
 		window.onresize = function()
 		{
@@ -981,10 +985,10 @@ p.nominalBounds = new cjs.Rectangle(0,0,960,550);
 			var ow = 960; // your stage width
 			var oh = 550; // your stage height
 			
-			if ((fullscreenSwitch.currentFrame == 1) && (window.innerWidth < window.innerHeight))
+			/*if ((fullscreenSwitch.currentFrame == 1) && (window.innerWidth < window.innerHeight))
 				keepAspectRatio = false;
 			else 
-				keepAspectRatio = true;
+				keepAspectRatio = true;*/
 			
 			if (keepAspectRatio)
 			{
@@ -1014,7 +1018,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,960,550);
 			stage.update();
 		}
 		
-		//onResize();
+		onResize();
 	}
 	this.frame_29 = function() {
 		this.stop();
