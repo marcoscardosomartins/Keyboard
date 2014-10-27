@@ -7,9 +7,8 @@
 <script src="http://code.createjs.com/easeljs-0.7.1.min.js"></script>
 <script src="http://code.createjs.com/tweenjs-0.5.1.min.js"></script>
 <script src="http://code.createjs.com/movieclip-0.7.1.min.js"></script>
-    
-    
-    
+<script src="phonegap.js"></script>
+<script src="cordova.js"></script>
 <script src="index.js"></script>
 <style type="text/css">
     /* Remove margins and HTML scrollbars */
@@ -72,6 +71,24 @@ function playSound(id)
     //createjs.Sound.play(id, createjs.Sound.INTERRUPT_EARLY, 0, 0, loop);
     document.getElementById(id).play();
 }
+    
+// to call this function use like this playAudio('/android_asset/www/audio/basic/yes.mp3');
+function playAudio(url) {
+    // Play the audio file at url
+    var my_media = new Media(url,
+        // success callback
+        function() {
+            console.log("playAudio():Audio Success");
+        },
+        // error callback
+        function(err) {
+            console.log("playAudio():Audio Error: "+err);
+    });
+
+    // Play audio
+    my_media.play();
+}
+    
 function tick(event)
 {
     fpsLabel.text = Math.round(createjs.Ticker.getMeasuredFPS()) + " fps";    
