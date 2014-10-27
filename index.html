@@ -39,7 +39,7 @@
     }
 </style>
 <script>
-var canvas, stage, exportRoot;
+var canvas, stage, exportRoot, media;
 
 function init() 
 {
@@ -72,9 +72,10 @@ function playSound(id)
 }
 
 function playPGAudio(src) {
-    var media = new Media(src, success, error_error);
+    if (media)
+        media.release();
+    media = new Media(src, success, error_error);
     media.play();
-    media.release();
 }
 
 function success() {
