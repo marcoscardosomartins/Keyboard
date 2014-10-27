@@ -770,11 +770,22 @@ p.nominalBounds = new cjs.Rectangle(-27.5,-27.5,55,55);
 			}
 		}
 		
+		function popup(key)
+		{
+			key.scaleX = key.scaleY = 1.1;
+			
+			setTimeout(function() 
+			{
+				key.scaleX = key.scaleY = 1.0;
+			}, 100);
+		}
+		
 		function clickHandler(e)
 		{
 			var str = e.currentTarget.name.substr(1,3);
-			
-			e.currentTarget.bg.gotoAndPlay("s1");
+			//e.currentTarget.bg.gotoAndPlay("s1");
+		
+			popup(e.currentTarget);
 			
 			playAudio("click");
 			
