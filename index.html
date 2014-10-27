@@ -7,7 +7,7 @@
             /*if (device.platform == 'Android') {
                 src = '/android_asset/www/' + src;
             }*/
-            alert('inside playPGAudio');
+            //alert('inside playPGAudio');
             var media = new Media(src, success, error_error);
  
             media.play();
@@ -30,17 +30,14 @@
                 path = "/android_asset/www/";
             }*/
             path = "/android_asset/www/";
-            alert(path);
+            //alert(path);
             return path;
         };
         
         function playAudio()
         {
-            alert('antes de chamar o audio');
-            playPGAudio(getPhoneGapPath() + 'music.ogg');
+            //alert('antes de chamar o audio');
+            playPGAudio(getPhoneGapPath() + 'sword.ogg');
         }
-        //playAudio();
-        
-       // playPGAudio(getPhoneGapPath() + 'assets/click.ogg');
     </script>
 </html>
