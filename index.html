@@ -65,12 +65,6 @@ function init()
 	createjs.Ticker.addEventListener("tick", tick);  
 }
 
-function playSound(id)
-{
-    //createjs.Sound.play(id, createjs.Sound.INTERRUPT_EARLY, 0, 0, loop);
-    document.getElementById(id).play();
-}
-
 function playPGAudio(src) {
     if (media)
         media.release();
