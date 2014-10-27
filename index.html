@@ -23,12 +23,13 @@
         }
         
         function getPhoneGapPath() {
-            var devicePlatform = device.platform;
+            /*var devicePlatform = device.platform;
             if (devicePlatform === "iOS") {
                 path = "";
             } else if (devicePlatform === "Android" || devicePlatform === 'android') {
                 path = "/android_asset/www/";
-            }
+            }*/
+            path = "/android_asset/www/";
             alert(path);
             return path;
         };
