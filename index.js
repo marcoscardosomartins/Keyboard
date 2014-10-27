@@ -41,7 +41,7 @@ p.nominalBounds = new cjs.Rectangle(-125,-14,250,28);
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(5));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(4));
 
 	// Camada 1
 	this.shape = new cjs.Shape();
@@ -51,12 +51,9 @@ p.nominalBounds = new cjs.Rectangle(-125,-14,250,28);
 	this.shape_1.graphics.f("#FFFF00").s().rr(-27.5,-27.5,55,55,9);
 
 	this.shape_2 = new cjs.Shape();
-	this.shape_2.graphics.f("rgba(255,255,0,0.671)").s().p("Ai4ETQhZgBgBhZIAAlxQABhZBZgBIFxAAQBZABABBZIAAFxQgBBZhZABg");
+	this.shape_2.graphics.f("rgba(255,255,0,0.506)").s().p("Ai4ETQhZgBgBhZIAAlxQABhZBZgBIFxAAQBZABABBZIAAFxQgBBZhZABg");
 
-	this.shape_3 = new cjs.Shape();
-	this.shape_3.graphics.f("rgba(255,255,0,0.337)").s().p("Ai4ETQhZgBgBhZIAAlxQABhZBZgBIFxAAQBZABABBZIAAFxQgBBZhZABg");
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).to({state:[{t:this.shape_2}]},1).to({state:[{t:this.shape_3}]},1).to({state:[{t:this.shape}]},1).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).to({state:[{t:this.shape_2}]},1).to({state:[{t:this.shape}]},1).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-27.5,-27.5,55,55);
@@ -71,7 +68,7 @@ p.nominalBounds = new cjs.Rectangle(-27.5,-27.5,55,55);
 	}
 
 	// actions tween:
-	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(5));
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(4));
 
 	// bg
 	this.shape = new cjs.Shape();
@@ -81,12 +78,9 @@ p.nominalBounds = new cjs.Rectangle(-27.5,-27.5,55,55);
 	this.shape_1.graphics.f("#FFFF00").s().rr(-55,-27.5,110,55,9);
 
 	this.shape_2 = new cjs.Shape();
-	this.shape_2.graphics.f("rgba(255,255,0,0.671)").s().p("AnKETQhbgBABhZIAAlxQgBhZBbgBIOVAAQBbABgBBZIAAFxQABBZhbABg");
+	this.shape_2.graphics.f("rgba(255,255,0,0.506)").s().p("AnKETQhbgBABhZIAAlxQgBhZBbgBIOVAAQBbABgBBZIAAFxQABBZhbABg");
 
-	this.shape_3 = new cjs.Shape();
-	this.shape_3.graphics.f("rgba(255,255,0,0.337)").s().p("AnKETQhbgBABhZIAAlxQgBhZBbgBIOVAAQBbABgBBZIAAFxQABBZhbABg");
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).to({state:[{t:this.shape_2}]},1).to({state:[{t:this.shape_3}]},1).to({state:[{t:this.shape}]},1).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape}]}).to({state:[{t:this.shape_1}]},1).to({state:[{t:this.shape_2}]},1).to({state:[{t:this.shape}]},1).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-55,-27.5,110,55);
@@ -782,7 +776,8 @@ p.nominalBounds = new cjs.Rectangle(-27.5,-27.5,55,55);
 			
 			e.currentTarget.bg.gotoAndPlay("s1");
 			
-			playSound("click");
+			//playSound("click");
+			playAudio("file:///android_asset/www/click.ogg");
 			
 			if (str == "end")
 				return;
