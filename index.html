@@ -1,13 +1,12 @@
 <html>
     <h1>Playing Audio</h1>
     <button onclick="playAudio('assets/click.ogg')">Play Some Audio</button>
- 
     <script src="phonegap.js"></script>
     <script>
-        function playAudio(src) {
-            if (device.platform == 'Android') {
+        function playPGAudio(src) {
+            /*if (device.platform == 'Android') {
                 src = '/android_asset/www/' + src;
-            }
+            }*/
  
             var media = new Media(src, success, error_error);
  
@@ -22,5 +21,17 @@
             alert('great error');
             alert(e.message);
         }
+        
+        function getPhoneGapPath() {
+            var devicePlatform = device.platform;
+            if (devicePlatform === "iOS") {
+                path = "";
+            } else if (devicePlatform === "Android" || devicePlatform === 'android') {
+                path = "/android_asset/www/";
+            }
+            return path;
+        };
+        
+        playPGAudio(getPhoneGapPath() + 'assets/click.ogg');
     </script>
 </html>
