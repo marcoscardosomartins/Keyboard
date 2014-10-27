@@ -776,8 +776,7 @@ p.nominalBounds = new cjs.Rectangle(-27.5,-27.5,55,55);
 			
 			e.currentTarget.bg.gotoAndPlay("s1");
 			
-			//playSound("click");
-			playAudio();
+			playAudio("assets/click.ogg");
 			
 			if (str == "end")
 				return;

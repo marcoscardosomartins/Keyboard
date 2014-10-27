@@ -89,9 +89,9 @@ function getPhoneGapPath() {
     return "/android_asset/www/";
 };
 
-function playAudio()
+function playAudio(som)
 {
-    playPGAudio(getPhoneGapPath() + 'sword.ogg');
+    playPGAudio(getPhoneGapPath() + "assets/" + som + ".ogg");
 }
 function tick(event)
 {
